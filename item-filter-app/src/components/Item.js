@@ -6,7 +6,7 @@
 
 // export default Item;
 
-// src/components/Item.js
+
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteItem } from '../redux/itemsSlice';
