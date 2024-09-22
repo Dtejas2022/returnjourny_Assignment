@@ -5,8 +5,8 @@ import itemsReducer from './itemsSlice';
 //redux store
 const store = configureStore({
     reducer:{
-        items: itemsReducer //item state manage here
+        items: itemsReducer //item state manages here
     }
 });
 
-export default store
+export default store;

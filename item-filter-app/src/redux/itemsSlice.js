@@ -3,13 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 const itemsSlice = createSlice({
     name: 'items',
     initialState:{
-        items:[], //empty list for serchinf items 
+        items:[], //empty list for serching items 
         searchTerm:''
     },
     reducers:{
         // list of items 
         setItems(state, action) {
-            state.items = action.payload;
+            state.items = action.payload;  // Initializing items
+        },
+        addItem(state, action) {
+            // Add new item in current list of items
+            state.items.push(action.payload);
+        },
+        deleteItem(state, action) {
+            // Remove the item from the list by filtering it out
+            state.items = state.items.filter(item => item !== action.payload);
         },
         // update search 
         setSearchTerm(state, action) {
@@ -19,7 +27,7 @@ const itemsSlice = createSlice({
 });
 
 // action creater
-export const {setItems, setSearchTerm } = itemsSlice.actions;
+export const {setItems, addItem, deleteItem, setSearchTerm } = itemsSlice.actions;
 //seletors for state value of items and search
 export const selectItems = state => state.items.items;
 export const selectSearchTerm = state => state.items.searchTerm;
