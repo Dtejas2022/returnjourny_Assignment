@@ -25,7 +25,7 @@ const AddItem = () => {
             />
             <button
                 onClick={handleAddItem}  //above dicleared handler
-                className="bg-blue-500 text-white px-4 py-2 rounded"
+                className="bg-blue-500 hover:bg-green-500 text-white px-4 py-2 rounded"
             >
                 Add Item
             </button>

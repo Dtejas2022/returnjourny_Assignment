@@ -23,7 +23,7 @@ const Item = React.memo(({ item }) => {
             <span>{item}</span>
             <button
                 onClick={handleDelete}
-                className="bg-red-500 text-white px-2 py-1 rounded"
+                className="bg-blue-500 hover:bg-red-500 text-white px-2 py-1 rounded"
             >
                 Delete
             </button>

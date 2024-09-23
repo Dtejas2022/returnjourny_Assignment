@@ -24,6 +24,7 @@ const App = () => {
                 <Header />
                 <SearchBar /> {/* search bar component */}
                 <AddItem />
+                <p className='container mx-auto flex justify-center items-center bg-black mt-4 text-white'>My Shop Items</p>
                 <ItemList /> {/*filtered item list and add item list */}
             </div>
         </Provider>
