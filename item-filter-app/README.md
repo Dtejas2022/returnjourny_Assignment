@@ -1,6 +1,86 @@
-# Getting Started with Create React App
+# Item Filter App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React application allows users to filter, add, and delete items from a list. The app uses Redux Toolkit for state management and is styled with Tailwind CSS.
+
+## Features
+
+- **Search Functionality**: Filter items in real-time using the search bar.
+- **Add Items**: Users can add new items to the list.
+- **Delete Items**: Users can delete items from the list.
+- **State Management**: Redux Toolkit is used for efficient and scalable state management.
+- **Tailwind CSS**: The app is styled with Tailwind CSS for a modern, responsive design.
+
+## Demo
+
+The application provides a simple user interface for:
+- Adding items dynamically.
+- Filtering items based on search input.
+- Deleting items from the list.
+
+## Project Structure
+
+```plaintext
+src
+├── components
+│   ├── Header.js         # Header of the app
+│   ├── SearchBar.js      # Search functionality component
+│   ├── ItemList.js       # Renders a list of items
+│   ├── Item.js           # Individual item component
+├── redux
+│   ├── itemsSlice.js     # Redux slice to handle item state
+│   ├── store.js          # Redux store configuration
+├── App.js                # Main app component
+├── index.js              # Entry point of the app
+```
+
+## Prerequisites
+
+Ensure that you have the following tools installed on your system:
+
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) (version 6 or higher)
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/item-filter-app.git
+   cd item-filter-app
+   ```
+
+2. **Install dependencies:**
+
+   Install the necessary dependencies using npm:
+
+   ```bash
+   npm install
+   ```
+
+3. **Install Tailwind CSS:**
+
+   Tailwind CSS has already been set up, but ensure it's installed by running:
+
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init
+   ```
+
+   You can configure Tailwind in the `tailwind.config.js` file as needed.
+
+4. **Start the development server:**
+
+   Run the app in development mode using the following command:
+
+   ```bash
+   cd item-filter-app
+   ```
+
+   ```bash
+   npm start
+   ```
+
+   The app will be available at `http://localhost:3000/`.
 
 ## Available Scripts
 
@@ -8,63 +88,42 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production into the `build` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm test`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Launches the test runner in interactive watch mode using Jest and React Testing Library.
 
-### `npm run eject`
+## Key Features & Implementation Notes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Redux Toolkit for State Management:**
+   - All item-related state (items, search term) is managed using Redux Toolkit.
+   - `src/redux/itemsSlice.js` manages adding, deleting, and filtering items.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Item Management:**
+   - New items are added using an input field and dispatched to the Redux store.
+   - Items can be deleted by clicking the delete button next to each item.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Search Functionality:**
+   - The search bar filters items in real time.
+   - The search is case-insensitive, allowing flexible user input.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Tailwind CSS for Styling:**
+   - The app uses Tailwind CSS for responsive and modern styling.
+   - Components like buttons, inputs, and the item list are all styled with Tailwind.
 
-## Learn More
+5. **Performance Optimization:**
+   - The `Item.js` component is wrapped with `React.memo` to avoid unnecessary re-renders.
+   - Redux keeps the state centralized for better performance and scalability.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Folder Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **src/components**: Contains React components like `ItemList`, `Item`, `SearchBar`, and `Header`.
+- **src/redux**: Contains Redux slice (`itemsSlice.js`) and store configuration (`store.js`).
+- **src/index.js**: The entry point that renders the `App` component.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
